@@ -13,3 +13,6 @@ ln -f ~/.dotfiles/bash/bashrc ~/.bashrc
 # Git Config
 rm -f ~/.gitconfig
 ln -sf ~/.dotfiles/git/gitconfig ~/.gitconfig
+
+# Repo command
+sh ~/.dotfiles/repo/install.sh
