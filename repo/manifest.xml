@@ -3,10 +3,10 @@
 <!-- https://code.google.com/p/git-repo/source/browse/docs/manifest-format.txt -->
 
 <manifest>
-	<remote name="github" fetch="ssh://git@github.com:sanagrwl" alias="origin"/>
+	<remote name="github" fetch="ssh://git@github.com" alias="origin"/>
   <default revision="master" remote="github"/>
 
-  <project name="clj-server-template" groups="notdefault" />
-  <project name="clojure-core-async-example" groups="notdefault" />
+  <project name="sanagrwl/clj-server-template" groups="notdefault" />
+  <project name="sanagrwl/clojure-core-async-example" groups="notdefault" />
 
 </manifest>
