@@ -6,7 +6,7 @@
 	<remote name="github" fetch="ssh://git@github.com" alias="origin"/>
   <default revision="master" remote="github"/>
 
-  <project name="sanagrwl/clj-server-template" groups="notdefault" />
-  <project name="sanagrwl/clojure-core-async-example" groups="notdefault" />
+  <project name="sanagrwl/clj-server-template" groups="notdefault" path="clj-server-template"/>
+  <project name="sanagrwl/clojure-core-async-example" groups="notdefault" path="clojure-core-async-example"/>
 
 </manifest>
