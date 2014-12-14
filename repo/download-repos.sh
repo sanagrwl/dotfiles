@@ -1,6 +1,6 @@
-mkdir -p ~/work/foo
+mkdir ~/work/personal
 
-cd ~/work/foo
+cd ~/work/personal
 
 # Init directory
 repo init -u https://github.com/sanagrwl/dotfiles -m repo/manifest.xml
