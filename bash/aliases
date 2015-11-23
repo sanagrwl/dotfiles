@@ -11,3 +11,11 @@ alias ducks='du -cksh *'
 
 # Show most commonly used commands
 alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
+
+# Docker
+alias di="eval \$(docker-machine env dev)"
+alias dm="docker-machine"
+alias dc="docker-compose"
+alias dps="docker ps"
+alias dpsa="docker ps -a"
+alias dclean="docker ps -a | grep _run_ | awk '{print \$1}' | xargs docker rm"
