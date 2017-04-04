@@ -7,7 +7,7 @@ alias lt='ls -ltG --color'    #              sorted by latest changed
 alias gpr='git pull --rebase'
 
 # File sizes for current directory
-alias ducks='du -cksh *' 
+alias ducks='du -cksh *'
 
 # Show most commonly used commands
 alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
@@ -16,6 +16,7 @@ alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' 
 alias di="eval \$(docker-machine env dev)"
 alias dm="docker-machine"
 alias dc="docker-compose"
+alias dce="docker-compose exec"
 alias dps="docker ps"
 alias dpsa="docker ps -a"
 alias dclean="docker ps -a | grep _run_ | awk '{print \$1}' | xargs docker rm"
