@@ -1,0 +1,42 @@
+#!/bin/sh
+set -euf
+exec < /dev/tty
+stty icrnl
+lastcard_filename="tmp/lastcard"
+lastpair_filename="tmp/lastpair"
+
+if [ $# -le 1 ]; then
+  if [ -e $lastcard_filename ]; then
+    default_card_number=$(cat $lastcard_filename)
+  else
+    default_card_number="n/a"
+  fi
+
+  if [ -e $lastpair_filename ]; then
+    default_pair=$(cat $lastpair_filename)
+  else
+    default_pair="Ghost"
+  fi
+
+  read -p "Card # (default: $default_card_number): " card_number
+  read -p "Pair 1 (default: $default_pair): " pair1
+  read -p "Pair 2 (optional): " pair2
+
+  if [ "$card_number" == "" ]; then
+    card_number=$default_card_number
+  fi
+
+  if [ "$pair1" == "" ]; then
+    pair1=$default_pair
+  fi
+
+  if [ "$pair2" == "" ]; then
+    pairs="$pair1"
+  else
+    pairs="$pair1/$pair2"
+  fi
+
+  echo $card_number > $lastcard_filename
+  echo $pair1 > $lastpair_filename
+  echo "[$card_number] $pairs: " | cat - $1 > /tmp/out && mv /tmp/out $1
+fi
