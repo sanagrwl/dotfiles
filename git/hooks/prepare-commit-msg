@@ -2,8 +2,8 @@
 set -euf
 exec < /dev/tty
 stty icrnl
-lastcard_filename="tmp/lastcard"
-lastpair_filename="tmp/lastpair"
+lastcard_filename="/tmp/lastcard"
+lastpair_filename="/tmp/lastpair"
 
 if [ $# -le 1 ]; then
   if [ -e $lastcard_filename ]; then
