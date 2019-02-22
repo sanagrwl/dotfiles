@@ -4,3 +4,23 @@ function whatsonsudo() { sudo lsof -iTCP:$1 -sTCP:LISTEN; }
 
 # Pretty print JSON using curl
 function curlj() {curl -s $@ | python -mjson.tool }
+
+# Semantinc versioning using git describe
+function sem_version() {
+  # takes in tag or tag pattern
+  # usage: sem_version ["v/1.0"|"v/*"]
+  IFS=-
+  set -- `git describe --always --tags --match "$1"`
+  local major_minor=$1
+  local patch=$2
+  local v=`basename $major_minor.${patch:-0}`
+  echo $v
+}
+
+function sem_version_git_id() {
+  # gets the git version either from git describe or head if tag is on the latest commit
+  IFS=-
+  set -- `git describe --always --tags --match "$1"`
+  local v=${3:-g`git rev-parse --short HEAD`}
+  echo $v
+}
