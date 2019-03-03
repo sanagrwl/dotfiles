@@ -1,2 +1,6 @@
+# Ruby gems
+export GEM_HOME=~/.gems
+
 # bin
-export PATH=$PATH:~/bin
+export PATH=$PATH:~/.gems/bin:~/bin
+
