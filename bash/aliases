@@ -6,6 +6,9 @@ alias lt='ls -ltG --color'    #              sorted by latest changed
 #git
 alias gpr='git pull --rebase'
 
+# open github repo in browser
+alias gho="open \`git remote -v | grep git@github.com | grep fetch | head -1 | cut -f2 | cut -d' ' -f1 | sed -e's/:/\//' -e 's/git@/http:\/\//'\`"
+
 # File sizes for current directory
 alias ducks='du -cksh *'
 
