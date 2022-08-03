@@ -20,3 +20,6 @@ alias dce="docker-compose exec"
 alias dps="docker ps"
 alias dpsa="docker ps -a"
 alias dclean="docker ps -a | grep _run_ | awk '{print \$1}' | xargs docker rm"
+
+# terraform
+alias tf="terraform"

@@ -1,9 +1,6 @@
 # Given a port, it shows the details of the service running on it
 function whatson() { lsof -iTCP:$1 -sTCP:LISTEN; }
 
-# Pretty print JSON using curl
-function curlj() {curl -s $@ | python -mjson.tool }
-
 # Semantinc versioning using git describe
 function sem_version() {
   # takes in tag or tag pattern
