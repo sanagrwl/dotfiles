@@ -105,3 +105,6 @@ source ~/.dotfiles/aliases
 
 # replace this with your mac's username to remove username info on terminal
 # DEFAULT_USER=
+
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
