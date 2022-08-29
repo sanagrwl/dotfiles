@@ -32,3 +32,5 @@
     purr = pull --rebase
 [push]
 	default = tracking
+[init]
+	defaultBranch = main
