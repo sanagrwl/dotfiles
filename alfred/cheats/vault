@@ -1,0 +1,27 @@
+# list auth methods
+vault auth list
+
+# list aws auth roles
+vault list auth/aws/role
+
+# read aws auth role
+vault read auth/aws/role/<role-name>
+
+# list k8 auth roles
+vault list auth/<cluster>/role
+
+# read k8 auth role
+vault read auth/<cluster>/role/<role-name>
+
+# write a secret to a path
+vault write secret/users password=12345
+
+# write multiple values
+vault write secret/users name=joe lastname=smith age=39
+
+# share a secret by creating a wrapping token
+vault kv get -wrap-ttl=120 secret/dev
+
+# open shared secret / unwrap
+VAULT_TOKEN=$WRAPPING_TOKEN vault unwrap
+

@@ -27,3 +27,6 @@ alias dclean="docker ps -a | grep _run_ | awk '{print \$1}' | xargs docker rm"
 
 # terraform
 alias tf="terraform"
+
+# kubernets
+alias k="kubernetes"

@@ -1,0 +1,14 @@
+# remove all changes on current branch
+git clean -f -d
+
+# purge all unstaged changes on a branch (discard changes)
+git clean -df git checkout -- .
+
+# delete remote branch or tag
+git push origin --delete <branch_name|tag_name>
+
+# push a new branch
+git push -u origin <branch_name>
+
+# push a new tag
+git push origin <tag_name>

@@ -1,0 +1,38 @@
+# Kubectl cheat sheet:
+https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+
+# list a resource in all namespaces
+k get <resource.. pods> --all-namespaces
+
+# get all pods with extra details
+k get pods -o wide
+
+# List Services Sorted by Name
+k get services --sort-by=.metadata.name
+
+# Get the version label of all pods with label app=cassandra
+k get pods --selector=app=cassandra -o jsonpath='{.items[*].metadata.labels.version}'
+
+# Retrieve the value of a key with dots, e.g. 'ca.crt'
+k get configmap myconfig -o jsonpath='{.data.ca\.crt}'
+
+# Get all running pods in the namespace
+k get pods --field-selector=status.phase=Running
+
+# Show labels for all pods (or any other Kubernetes object that supports labelling)
+k get pods --show-labels
+
+# Output decoded secrets without external tools
+k get secret my-secret -o go-template='{{range $k,$v := .data}}{{"### "}}{{$k}}{{"\n"}}{{$v|base64decode}}{{"\n\n"}}{{end}}'
+
+# Check the history of deployments including the revision
+k rollout history deployment/<deployment_name>
+
+# Rolling restart of a deployment
+k rollout restart deployment/<deployment_name>
+
+# Scale a deployment
+k scale --replicas=3 deployment/<deployment_name>
+
+# logs for a previous instantiation of a container
+k logs my-pod --previous
