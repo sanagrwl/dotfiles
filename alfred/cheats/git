@@ -12,3 +12,6 @@ git push -u origin <branch_name>
 
 # push a new tag
 git push origin <tag_name>
+
+# prune / cleanup local branch refs
+git remote prune origin --dry-run
